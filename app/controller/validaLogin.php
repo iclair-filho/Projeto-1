@@ -6,7 +6,7 @@ $password = $_POST['password'];
 $criptPassword = md5($password);
 
 try{
-    $sql = $conn->prepare("SELECT * FROM usuarios WHERE cpf = '$cpf' AND senha = '$password'");
+    $sql = $conn->prepare("SELECT * FROM usuario WHERE cpf = '$cpf' AND senha = '$criptPassword'");
     $sql->execute();    
     $resultRows = $sql->fetch();
 

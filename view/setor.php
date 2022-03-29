@@ -1,5 +1,6 @@
 <?php
 include 'header.php';
+include '../app/controller/connection.php';
 ?>
      <div class="conteudo">
        <div class="container-fluid">
@@ -14,7 +15,7 @@ include 'header.php';
             <div class="card mb-3">
               <div class="card-header">Setor</div>
                 <div class="card-body text-primary">
-                  <form class="row g-3">
+                  <form class="row g-3" action="../app/controller/insertSetor.php" method="POST">
                     <div class="col-5">
                       <label class="visually-hidden">Setor</label>
                       <input type="text" name="setor" class="form-control form-control-sm" id="setor" placeholder="Descrição">
@@ -23,14 +24,11 @@ include 'header.php';
                       <label for="staticEmail2" class="visually-hidden">Localidade</label>
                       <input type="text" name="localidade" class="form-control form-control-sm" id="localidade" placeholder="Localidade">
                     </div>
-
                     <div class="col-2">
                       <button type="submit" class="btn btn-primary btn-sm mb-3">Cadastrar</button>
                     </div>
                   </form>
-
-                </div>
-                
+                </div>                
               </div>
             </div>
           </div>
@@ -40,68 +38,46 @@ include 'header.php';
                 <table class="table table-hover">
                   <thead>
                     <tr>
+                      <th scope="col">ID Setor</th>
                       <th scope="col">Setor</th>
                       <th scope="col">Localidade</th>
                       <th scope="col">Ações</th>
-                      
                     </tr>
                   </thead>
+<?php
+  try{
+    $sqlSelect = $conn->prepare("SELECT * FROM setor");
+    $sqlSelect->execute();
+    $sqlSelect->setFetchMode(PDO::FETCH_ASSOC);
+
+    foreach(new RecursiveArrayIterator($sqlSelect->fetchAll()) as $x => $row){
+
+?>                  
                   <tbody>
                     <tr>
-                      <th scope="row">1</th>
-                      <td>Mark</td>
+                      <th scope="row"><?php echo $row['idSetor'];?></th>
+                      <td><?php echo $row['setor'];?></td>
+                      <td><?php echo $row['localidade'];?></td>
                       <td>
                         <a href="#"><i class='bx bxs-edit bg-warning'></i></a>
-                        <a href="#"><i class='bx bxs-trash bg-danger'></i></a>
-                      </td>
-                      
+                        <a href="#" onclick="return confirm('Deseja realmente deletar este Setor?')"><form action="../app/controller/deleteSetor.php" method="post"><input type="hidden" name="idSetor" value="<?php echo $row['idSetor'];?>"><button type="submit"><i class='bx bxs-trash bg-danger'></i></button></form></a>
+                      </td>                     
                     </tr>
-                    <tr>
-                      <th scope="row">1</th>
-                      <td>Mark</td>
-                      <td>
-                        <a href="#"><i class='bx bxs-edit bg-warning'></i></a>
-                        <a href="#"><i class='bx bxs-trash bg-danger'></i></a>
-                      </td>
-                      
-                    </tr>
-                    <tr>
-                      <th scope="row">1</th>
-                      <td>Mark</td>
-                      <td>
-                        <a href="#"><i class='bx bxs-edit bg-warning'></i></a>
-                        <a href="#"><i class='bx bxs-trash bg-danger'></i></a>
-                      </td>
-                      
-                    </tr>
-                    <tr>
-                      <th scope="row">1</th>
-                      <td>Mark</td>
-                      <td>
-                        <a href="#"><i class='bx bxs-edit bg-warning'></i></a>
-                        <a href="#"><i class='bx bxs-trash bg-danger'></i></a>
-                      </td>
-                      
-                    </tr>
-
-
                   </tbody>
+<?php
+    }
+  }catch(PDOException $e){
+    echo "Echo: " . $e->getMessage();
+  }
+  $conn = null;
+?>                  
                 </table>
               </div>
-
             </div>
-
-          </div>
-
-          
-        </div>
-        
-       </div>
-      
-      
-      </div>
-
-    
+          </div>        
+        </div>        
+       </div>            
+      </div>    
 <?php
 include 'footer.php';
 ?>

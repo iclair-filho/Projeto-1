@@ -13,7 +13,7 @@ try{
     $sql->execute();
 
     $resultUpdate = $sql->rowCount();
-    echo "<script>alert('Usuario atualizado com sucesso!');window.location.href='../../view/cadUsuario.php';</script>";
+    echo "<script>alert('Usuario atualizado com sucesso!');window.location.href='../../view/usuario.php';</script>";
 
 }catch(PDOException $e){
     echo "Error: " . $e->getMessage();

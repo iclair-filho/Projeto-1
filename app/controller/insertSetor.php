@@ -8,7 +8,7 @@ try{
     $conn->beginTransaction();
     $conn->exec("INSERT INTO setor (setor, localidade) VALUES ('$setor', '$localidade')");
     $conn->commit();
-    echo "<script>alert('Setor cadastrado com sucesso!');window.location.href='../../view/cadSetor.php';</script>";
+    echo "<script>alert('Setor cadastrado com sucesso!');window.location.href='../../view/setor.php';</script>";
     
 }catch(PDOException $e){
     $conn->rollBack();

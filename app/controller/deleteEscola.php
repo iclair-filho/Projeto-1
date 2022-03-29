@@ -6,7 +6,7 @@ $idEscola = $_POST['idEscola'];
 try{
     $sql = "DELETE FROM escola WHERE idEscola = '$idEscola'";
     $sql = $conn->exec($sql);
-    echo "<script>alert('Usuário deletado com sucesso!');window.location.href='../../view/cadEscola.php'</script>";
+    echo "<script>alert('Escola deletada com sucesso!');window.location.href='../../view/escola.php'</script>";
 
 }catch(PDOException $e){
     echo "Error: " . $e->getMEssage();

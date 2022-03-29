@@ -45,7 +45,7 @@
           <li><a href="#">Usuários</a></li>
           <li><a href="setor.php">Setor</a></li>
           <li><a href="escola.php">Escola</a></li>
-          <li><a href="visitas.php">Visitas</a></li>
+          <li><a href="visita.php">Visitas</a></li>
         </ul>
       </li>
       <li>

@@ -12,7 +12,7 @@ try{
     $sql->execute();
 
     $resultUpdate = $sql->rowCount();
-    echo "<script>alert('Escola atualizada com sucesso!');window.location.href='../../view/cadEscola.php';</script>";
+    echo "<script>alert('Escola atualizada com sucesso!');window.location.href='../../view/escola.php';</script>";
 
 }catch(PDOException $e){
     echo "Error: " . $e->getMessage();

@@ -15,7 +15,7 @@ try{
     $sql->execute();
 
     $resultUpdate = $sql->rowCount();
-    echo "<script>alert('Visita atualizada com sucesso!');window.location.herf='../../view/cadVisita.php';</script>";
+    echo "<script>alert('Visita atualizada com sucesso!');window.location.herf='../../view/visita.php';</script>";
 
 }catch(PDOException $e){
     echo "Error: " . $e->getMessage();

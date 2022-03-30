@@ -20,6 +20,7 @@ include '../app/controller/connection.php';
                       <label for="exampleFormControlInput1" class="col-form-label-sm">Setor</label>
                       <select class="form-select form-select-sm" aria-label=".form-select-sm example">
                         <option selected>Open this select menu</option>
+
                         <option value="1">One</option>
                         <option value="2">Two</option>
                         <option value="3">Three</option>
@@ -78,7 +79,7 @@ include '../app/controller/connection.php';
                       <td><?php echo $row['responsavel'];?></td>
                       <td>
                         <a href="#"><i class='bx bxs-edit bg-warning'></i></a>
-                        <a href="#" onclick="return confirm('Deseja realmente deletar esta Escola?')"><form action="../app/controller/deleteEscola.php" method="post"><input type="hidden" name="idEscola" value="<?php echo $row['idEscola'];?>"><button type="submit"><i class='bx bxs-trash bg-danger'></i></button></form></a>
+                        <a href="#" onclick="return confirm('Deseja realmente deletar esta Escola?')"><i class='bx bxs-trash bg-danger'></i></a>
                       </td>                                        
                     </tr>
                   </tbody>

@@ -60,7 +60,7 @@ include '../app/controller/connection.php';
                       <td><?php echo $row['localidade'];?></td>
                       <td>
                         <a href="#"><i class='bx bxs-edit bg-warning'></i></a>
-                        <a href="#" onclick="return confirm('Deseja realmente deletar este Setor?')"><form action="../app/controller/deleteSetor.php" method="post"><input type="hidden" name="idSetor" value="<?php echo $row['idSetor'];?>"><button type="submit"><i class='bx bxs-trash bg-danger'></i></button></form></a>
+                        <a href="#" onclick="return confirm('Deseja realmente deletar este Setor?')"><i class='bx bxs-trash bg-danger'></i></a>
                       </td>                     
                     </tr>
                   </tbody>

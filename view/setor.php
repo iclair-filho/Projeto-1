@@ -10,6 +10,7 @@ include '../app/controller/connection.php';
             <li class="breadcrumb-item active" aria-current="page">Setor</li>
           </ol>
         </nav> 
+<!-- Cadastro setor -->        
         <div class="row">
           <div class="col-12">
             <div class="card mb-3">
@@ -32,14 +33,14 @@ include '../app/controller/connection.php';
               </div>
             </div>
           </div>
+<!-- Tabela setor -->          
           <div class="col-12">
             <div class="card">
               <div class="card-body">
                 <table class="table table-hover">
                   <thead>
                     <tr>
-                      <th scope="col">ID Setor</th>
-                      <th scope="col">Setor</th>
+                      <th scope="col">Nome do setor</th>
                       <th scope="col">Localidade</th>
                       <th scope="col">Ações</th>
                     </tr>
@@ -55,12 +56,11 @@ include '../app/controller/connection.php';
 ?>                  
                   <tbody>
                     <tr>
-                      <th scope="row"><?php echo $row['idSetor'];?></th>
-                      <td><?php echo $row['setor'];?></td>
-                      <td><?php echo $row['localidade'];?></td>
+                      <td><?= $row['setor'];?></td>
+                      <td><?= $row['localidade'];?></td>
                       <td>
-                        <a href="#"><i class='bx bxs-edit bg-warning'></i></a>
-                        <a href="#" onclick="return confirm('Deseja realmente deletar este Setor?')"><i class='bx bxs-trash bg-danger'></i></a>
+                        <a href="editarSetor.php?idSetor=<?= $row['idSetor'];?>"><i class='bx bxs-edit bg-warning'></i></a>
+                        <a href="../app/controller/deleteSetor.php?idSetor=<?= $row['idSetor'] ?>"><i class='bx bxs-trash bg-danger'></i></a>
                       </td>                     
                     </tr>
                   </tbody>

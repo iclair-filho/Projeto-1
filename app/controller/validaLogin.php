@@ -12,6 +12,8 @@ try{
 
     if($resultRows > 0){
         echo "<script>alert('Logado com sucesso!');window.location.href='../../view/dashboard.php';</script>";
+    }else{
+        echo "<script>alert('CPF ou Senha inválidos.');window.location.href='../../index.html';</script>";
     }
 }catch(PDOException $e){
     echo "Error: " . $e->getMessage();

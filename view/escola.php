@@ -11,6 +11,8 @@ include '../app/controller/connection.php';
           </ol>
         </nav> 
         <div class="row">
+<!-- Cadastro Escola -->  
+        
           <div class="col-12">
             <div class="card mb-3">
               <div class="card-header">Escola</div>
@@ -18,12 +20,24 @@ include '../app/controller/connection.php';
                   <form class="row g-3" action="../app/controller/insertEscola.php" method="POST">
                     <div class="col-4">
                       <label for="exampleFormControlInput1" class="col-form-label-sm">Setor</label>
-                      <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                      <select class="form-select form-select-sm" name="idSetor" aria-label=".form-select-sm example">
                         <option selected>Open this select menu</option>
+<?php
+  try{
+    $sqlSetor = $conn->prepare("SELECT * FROM setor");
+    $sqlSetor->execute();
+    $sqlSetor->setFetchMode(PDO::FETCH_ASSOC);
 
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
+    foreach(new RecursiveArrayIterator($sqlSetor->fetchAll()) as $x => $row){
+      
+?>                        
+                        <option value="<?= $row['idSetor'];?>"><?php echo $row['setor'];?></option>
+<?php
+    }
+  }catch(PDOException $e){
+    echo "Error: " . $e->getMessage();
+  }
+?>                        
                       </select>
                     </div>
                     <div class="col-8">
@@ -47,13 +61,13 @@ include '../app/controller/connection.php';
               </div>
             </div>
           </div>
+<!-- Tabela Escola -->
           <div class="col-12">
             <div class="card">
               <div class="card-body">
                 <table class="table table-hover">
                   <thead>
                     <tr>
-                      <th scope="col">Id Escola</th>
                       <th scope="col">Setor</th>
                       <th scope="col">Escola</th>
                       <th scope="col">Localidade</th>
@@ -63,7 +77,7 @@ include '../app/controller/connection.php';
                   </thead>
 <?php 
   try{
-    $sqlSelect = $conn->prepare("SELECT * FROM escola");
+    $sqlSelect = $conn->prepare("select * from escola e join setor s on e.idSetor=s.idSetor");
     $sqlSelect->execute();
     $sqlSelect->setFetchMode(PDO::FETCH_ASSOC);
 
@@ -72,14 +86,13 @@ include '../app/controller/connection.php';
 ?>                  
                   <tbody>
                     <tr>
-                      <th scope="row"><?php echo $row['idEscola'];?></th>
-                      <td><?php echo "setor";?></td>
+                      <td><?= $row['setor'];?></td>
                       <td><?php echo $row['nomeEscola'];?></td>
-                      <td><?php echo $row['localidade'];?></td>
+                      <td><?php echo $row['localidadeEscola'];?></td>
                       <td><?php echo $row['responsavel'];?></td>
                       <td>
-                        <a href="#"><i class='bx bxs-edit bg-warning'></i></a>
-                        <a href="#" onclick="return confirm('Deseja realmente deletar esta Escola?')"><i class='bx bxs-trash bg-danger'></i></a>
+                        <a href="editarEscola.php?idEscola=<?php echo $row['idEscola']; ?>"><i class='bx bxs-edit bg-warning'></i></a>
+                        <a href="../app/controller/deleteEscola.php?idEscola=<?php echo $row['idEscola'];?>" onclick="return confirm('Deseja realmente deletar esta Escola?')"><i class='bx bxs-trash bg-danger'></i></a>
                       </td>                                        
                     </tr>
                   </tbody>

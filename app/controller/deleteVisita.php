@@ -1,7 +1,7 @@
 <?php 
 include 'connection.php';
 
-$idVisita = $_POST['idVisita'];
+$idVisita = $_GET['idVisita'];
 
 try{
     $sql = "DELETE FROM visita WHERE idVisita = '$idVisita'";

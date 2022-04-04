@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `escola` (
-  `idEscola` int(100) NOT NULL,
+  `idEscola` int() NOT NULL,
   `nomeEscola` varchar(255) NOT NULL,
   `responsavel` varchar(255) NOT NULL,
   `localidade` varchar(255) NOT NULL
@@ -48,7 +48,7 @@ INSERT INTO `escola` (`idEscola`, `nomeEscola`, `responsavel`, `localidade`) VAL
 --
 
 CREATE TABLE `setor` (
-  `idSetor` int(100) NOT NULL,
+  `idSetor` int() NOT NULL,
   `setor` varchar(255) NOT NULL,
   `localidade` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -60,7 +60,7 @@ CREATE TABLE `setor` (
 --
 
 CREATE TABLE `usuario` (
-  `idUsuario` int(100) NOT NULL,
+  `idUsuario` int() NOT NULL,
   `nomeUsuario` varchar(255) NOT NULL,
   `cpf` varchar(255) NOT NULL,
   `telUsuario` varchar(255) NOT NULL,
@@ -84,7 +84,7 @@ INSERT INTO `usuario` (`idUsuario`, `nomeUsuario`, `cpf`, `telUsuario`, `senha`,
 --
 
 CREATE TABLE `visita` (
-  `idVisita` int(100) NOT NULL,
+  `idVisita` int() NOT NULL,
   `coordenador` varchar(255) NOT NULL,
   `qtAluno` int(255) NOT NULL,
   `conteudoDia` varchar(255) NOT NULL,

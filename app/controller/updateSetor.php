@@ -11,7 +11,7 @@ try{
     $sql->execute();
 
     $resultUpdate = $sql->rowCount();
-    echo "<script>alert('Setor atualizado com sucesso!');window.location.href='../../view/setor.phps';</script>";
+    echo "<script>alert('Setor atualizado com sucesso!');window.location.href='../../view/setor.php';</script>";
 
 }catch(PDOException $e){
     echo "Error: " . $e->getMessage();

@@ -12,7 +12,7 @@ include '../app/controller/connection.php';
         </nav> 
 <?php 
 $id = $_GET['idEscola'];
-$sqlSelect = $conn->prepare("SELECT * FROM escola WHERE idEscola = '$id'");
+$sqlSelect = $conn->prepare("SELECT * FROM escola WHERE idEscola = $id");
 $sqlselect->execute();
 $sqlselect->setFetchMode(PDO::FETCH_ASSOC);
 

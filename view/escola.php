@@ -77,11 +77,12 @@ include '../app/controller/connection.php';
                   </thead>
 <?php 
   try{
-    $sqlSelect = $conn->prepare("select * from escola e join setor s on e.idSetor=s.idSetor");
+    $sqlSelect = $conn->prepare("SELECT * FROM escola e join setor s on e.idSetor=s.idSetor");
     $sqlSelect->execute();
     $sqlSelect->setFetchMode(PDO::FETCH_ASSOC);
-
+    
     foreach(new RecursiveArrayIterator($sqlSelect->fetchAll()) as $x => $row){
+      
 
 ?>                  
                   <tbody>

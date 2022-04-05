@@ -6,7 +6,7 @@ include '../app/controller/connection.php';
        <div class="container-fluid">
          <nav aria-label="breadcrumb">
           <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
             <li class="breadcrumb-item active" aria-current="page">Setor</li>
           </ol>
         </nav> 

@@ -57,7 +57,7 @@ include '../app/controller/connection.php';
                                     id="exampleFormControlInput1">
                             </div>
                             <div class="col-2 align-self-end">
-                                <button type="submit" class="btn btn-primary btn-lg">Cadastrar</button>
+                                <button type="submit" class="btn btn-primary btn-sm">Cadastrar</button>
                             </div>
                     </div>
                     </form>

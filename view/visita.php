@@ -15,35 +15,50 @@ include '../app/controller/connection.php'
                 <div class="card mb-3">
                 <div class="card-header">Visita</div>
                     <div class="card-body">
-                    <form class="row g-3" action="../app/controller/insertSetor.php" method="POST">
-                        <div class="col-5">
-                        <label for="exampleFormControlInput1" class="col-form-label-sm">Setor</label>
+                    <form class="row g-3" action="../app/controller/insertVisita.php" method="POST">
+                        <div class="col-4">
+                        <label for="exampleFormControlInput1" class="visually-hidden">Setor</label>
                         <select class="form-select form-select-sm" aria-label=".form-select-sm example">
-                        <option selected>Selecione o setor</option>
-                        <option value="1">...</option>
+                        <option selected>-- Selecione o Setor --</option>
+                        <?php
+                                      try{
+                                        $sqlSetor = $conn->prepare("SELECT * FROM setor");
+                                        $sqlSetor->execute();
+                                        $sqlSetor->setFetchMode(PDO::FETCH_ASSOC);
+
+                                        foreach(new RecursiveArrayIterator($sqlSetor->fetchAll()) as $x => $row){
+                                          
+                                    ?>
+                                    <option value="<?= $row['idSetor'];?>"><?php echo $row['setor'];?></option>
+                                    <?php
+                                        }
+                                      }catch(PDOException $e){
+                                        echo "Error: " . $e->getMessage();
+                                      }
+                                    ?>
                         </select>
                         </div>
-                        <div class="col-5">
-                        <label class="exampleFormControlInput1">Nome da escola</label>
+                        <div class="col-8">
+                        <label for="exampleFormControlInput1" class="visually-hidden">Nome da Escola</label>
                         <input type="text" name="nomeEscola" class="form-control form-control-sm" id="nomeEscola" placeholder="Nome da escola" required>
                         </div>
-                        <div class="col-5">
+                        <div class="col-6">
                         <label for="exampleFormControlInput1" class="visually-hidden">Professor</label>
                         <input type="text" name="nomeProf" class="form-control form-control-sm" id="nomeProf" placeholder="Professor" required>
                         </div>
-                        <div class="col-5">
+                        <div class="col-6">
                         <label for="exampleFormControlInput1" class="visually-hidden">Telefone (professor)</label>
                         <input type="tel" name="telProf" class="form-control form-control-sm" id="telProf" placeholder="Telefone (professor)" required>
                         </div>
-                        <div class="col-5">
+                        <div class="col-6">
                         <label for="exampleFormControlInput1" class="visually-hidden">Número de alunos</label>
                         <input type="number" name="qtAluno" class="form-control form-control-sm" id="qtAluno" placeholder="Número de alunos" required>
                         </div>
-                        <div class="col-5">
+                        <div class="col-6">
                         <label for="exampleFormControlInput1" class="visually-hidden">Data da visita</label>
                         <input type="date" name="dataVisita" class="form-control form-control-sm" id="dataVisita" required>
                         </div>
-                        <div class="col-5">
+                        <div class="col-6">
                         <label for="exampleFormControlTextarea1" class="col-form-label-sm">Conteúdo do dia</label>
                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="conteudoDia" placeholder="Conteudo do dia " required></textarea>
                         </div>

@@ -1,7 +1,7 @@
 <?php 
 include 'connection.php';
 
-$coordenador = $_POST['coordenador'];
+// $coordenador = $_POST['coordenador'];
 $qtAluno = $_POST['qtAluno'];
 $conteudoDia = $_POST['conteudoDia'];
 $nomeProf = $_POST['nomeProf'];

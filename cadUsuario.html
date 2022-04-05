@@ -41,21 +41,36 @@
                 
             </div>
             <div class="login-form">
-                <form action="./app/controller/validaLogin.php" method="post">
-                    <div class="form-group">
-                        <label for="">Usuário</label>
+                <form action="./app/controller/insertUsuario.php" method="post">
+                    <div class="form-group mb-3">
+                        <label for="">Nome Completo</label>
+                        <input type="text" name="nomeUsuario" id="nome" class="form-control" required>
+
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="">CPF</label>
                         <input type="text" name="cpf" id="cpf" class="form-control" required>
 
                     </div>
-                    <div class="form-group">
+                    <div class="form-group mb-3">
+                        <label for="">Telefone</label>
+                        <input type="tel" name="telUsuario" id="tel" class="form-control" required>
+
+                    </div>
+                    <div class="form-group mb-3">
                         <label for="">Senha</label>
-                        <input type="password" name="password" id="senha" class="form-control" required>
+                        <input type="password" name="senha" id="senha" class="form-control" required>
+
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="">Confirme a Senha</label>
+                        <input type="password" name="senha2" id="senha2" class="form-control" required>
 
                     </div>
 
                     <div class="d-grid mt-3 gap-3">
-                        <button type="submit" name="" id="" class="btn btn-primary btn-sm">Entrar</button>
-                        <a href="cadUsuario.html" name="" id="" class="btn btn-success btn-sm">Cadastra-se</a>
+                        <button type="submit" name="" id="" class="btn btn-success btn-sm">Cadastrar</button>
+                        
                     </div>
 
                    

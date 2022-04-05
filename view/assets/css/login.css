@@ -1,0 +1,82 @@
+/* Google Fonts Import Link */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --blue: #11101d;
+    --blue_2: #3b4c61;
+    --branco_sidebar: #ebebeb;
+}
+
+body {
+    background-image: url(../img/bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: rgba(136, 163, 190, 0.445);
+}
+
+.login {
+
+    width: 100%;
+    height: 100vh;
+    /* background: #6C7A89; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.login-body {
+    width: 350px;
+    max-height: 400px;
+    /* background-color: rgba(255, 255, 255, 0.261); */
+    /* padding: 30px;
+    border-radius: 20px;
+    box-shadow: 2px 5px rgba(0, 0, 0, 0.13); */
+}
+
+.login-brand {
+    text-align: center;
+    margin-bottom: 30px;
+
+}
+
+.login-brand .logo-details {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.login-brand .logo-details i {
+    font-size: 60px;
+    color: var(--blue);
+    text-align: center;
+
+}
+
+.login-brand .logo-details .logo_name {
+    color: var(--blue);
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.login-body img {
+    width: 120px;
+}
+
+label {
+    color: black;
+    font-weight: 400;
+}
+
+.btn-primary {
+    background-color: var(--blue) !important;
+    border-color: var(--blue) !important;
+}

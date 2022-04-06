@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `escola` (
-  `idEscola` int() NOT NULL,
+  `idEscola` int ,
   `nomeEscola` varchar(255) NOT NULL,
   `responsavel` varchar(255) NOT NULL,
   `localidade` varchar(255) NOT NULL
@@ -48,7 +48,7 @@ INSERT INTO `escola` (`idEscola`, `nomeEscola`, `responsavel`, `localidade`) VAL
 --
 
 CREATE TABLE `setor` (
-  `idSetor` int() NOT NULL,
+  `idSetor` int NOT NULL,
   `setor` varchar(255) NOT NULL,
   `localidade` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -60,7 +60,7 @@ CREATE TABLE `setor` (
 --
 
 CREATE TABLE `usuario` (
-  `idUsuario` int() NOT NULL,
+  `idUsuario` int NOT NULL,
   `nomeUsuario` varchar(255) NOT NULL,
   `cpf` varchar(255) NOT NULL,
   `telUsuario` varchar(255) NOT NULL,
@@ -84,7 +84,7 @@ INSERT INTO `usuario` (`idUsuario`, `nomeUsuario`, `cpf`, `telUsuario`, `senha`,
 --
 
 CREATE TABLE `visita` (
-  `idVisita` int() NOT NULL,
+  `idVisita` int NOT NULL,
   `coordenador` varchar(255) NOT NULL,
   `qtAluno` int(255) NOT NULL,
   `conteudoDia` varchar(255) NOT NULL,
@@ -130,25 +130,25 @@ ALTER TABLE `visita`
 -- AUTO_INCREMENT de tabela `escola`
 --
 ALTER TABLE `escola`
-  MODIFY `idEscola` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `idEscola` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de tabela `setor`
 --
 ALTER TABLE `setor`
-  MODIFY `idSetor` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idSetor` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `idUsuario` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `idUsuario` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de tabela `visita`
 --
 ALTER TABLE `visita`
-  MODIFY `idVisita` int(100) NOT NULL AUTO_INCREMENT;
+  MODIFY `idVisita` int NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

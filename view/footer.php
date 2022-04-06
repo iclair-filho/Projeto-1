@@ -53,6 +53,7 @@ if (tamanhoTela <= 800) {
     sidebarResponsivo.classList.remove("close");
 }
 </script>
+
 </body>
 
 </html>

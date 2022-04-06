@@ -81,7 +81,7 @@ include '../app/controller/connection.php'
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                    <table class="table table-hover">
+                    <table class="table table-hover" id="tabela_javascript">
                         <thead>
                             <tr>
                                 <th scope="col">Setor</th>

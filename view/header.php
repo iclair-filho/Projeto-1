@@ -1,3 +1,7 @@
+<?php
+include '../app/controller/verificaLogin.php';
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -113,7 +117,7 @@
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>
-                                    <li><a class="dropdown-item" href="#"><i class='bx bx-exit'></i> Sair</a></li>
+                                    <li><a class="dropdown-item" href="../../../app/controller/logout.php"><i class='bx bx-exit'></i> Sair</a></li>
                                 </ul>
                             </li>
 

@@ -1,4 +1,5 @@
 <?php
+session_start();
 include "connection.php";
 
 $cpf = $_POST['cpf'];

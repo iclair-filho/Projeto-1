@@ -2,7 +2,7 @@
 include 'connection.php';
 
 $idEscola = $_GET['idEscola'];
-var_dump($idEscola);
+
 try{
     $sql = "DELETE FROM escola WHERE idEscola = '$idEscola'";
     $sql = $conn->exec($sql);

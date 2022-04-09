@@ -28,11 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `escola` (
-<<<<<<< HEAD
   `idEscola` int NOT NULL,
-=======
-  `idEscola` int ,
->>>>>>> e27c29e186f8047eb9b3a0e0a27b507d1c4d3f44
   `nomeEscola` varchar(255) NOT NULL,
   `responsavel` varchar(255) NOT NULL,
   `localidade` varchar(255) NOT NULL

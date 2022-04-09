@@ -5,7 +5,7 @@ include 'header.php';
     <div class="row g-4 mt-2">
 
         <div class="col-12 col-sm-6 col-md-3">
-            <a href="#">
+            <a href="usuario.php">
                 <div class="card">
                     <div class="img-card">
                         <i class='bx bxs-user'></i>
@@ -19,7 +19,7 @@ include 'header.php';
 
         </div>
         <div class="col-12 col-sm-6 col-md-3">
-            <a href="#">
+            <a href="setor.php">
                 <div class="card">
                     <div class="img-card">
                         <i class='bx bxs-share-alt'></i>
@@ -33,7 +33,7 @@ include 'header.php';
 
         </div>
         <div class="col-12 col-sm-6 col-md-3">
-            <a href="#">
+            <a href="escola.php">
                 <div class="card">
                     <div class="img-card">
                         <i class='bx bxs-school'></i>

@@ -7,6 +7,9 @@
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
+a:link{
+  text-decoration: none;
+}
 
 html {
   font-size: 90%;
@@ -307,6 +310,16 @@ tbody a i {
 
 .card {
   border: 0.5px solid var(--blue_2) !important;
+}
+.card .img-card{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin-top: 20px;
+}
+.card .img-card i{
+  font-size: 60px;
+  color: var(--blue);
 }
 
 .card .card-header {

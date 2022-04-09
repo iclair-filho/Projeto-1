@@ -24,5 +24,4 @@ try{
 }
 
 $conn = null;
-
 ?>

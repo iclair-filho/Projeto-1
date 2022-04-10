@@ -111,6 +111,12 @@ include '../app/controller/connection.php';
   }
   $conn = null;
 ?>
+                    <a tbody>
+                            <td><a href="../app/controller/realatorioEscola.php?idEscola=<?php echo $row['idEscola'];?>
+                            </button></a></td>
+                            <td><a href="#" onclick="return confirm('Confirme para imprimir');">
+                            <input type="hidden" name="idEscola" value="<?php echo $row['idEscola'];?>"><button class="btn btn-danger" type="submit">Imprimir</button></form></a></td>
+                    <a tbody>
                         </table>
                     </div>
                 </div>

@@ -70,13 +70,14 @@ include '../app/controller/connection.php';
                 <div class="card">
                     <div class="card-body">
                         <table class="table table-hover" id="tabela_javascript">
+                            <a href="../app/controller/relatorioEscola.php" target="_blank"><button class="btn btn-danger" type="submit">Imprimir</button></a>
                             <thead>
                                 <tr>
                                     <th scope="col">Setor</th>
                                     <th scope="col">Escola</th>
                                     <th scope="col">Localidade</th>
                                     <th scope="col">Responsável</th>
-                                    <th scope="col">Ações</th>
+                                    <th scope="col">Ações</th> 
                                 </tr>
                             </thead>
                             <?php 
@@ -111,12 +112,6 @@ include '../app/controller/connection.php';
   }
   $conn = null;
 ?>
-                    <a tbody>
-                            <td><a href="../app/controller/realatorioEscola.php?idEscola=<?php echo $row['idEscola'];?>
-                            </button></a></td>
-                            <td><a href="#" onclick="return confirm('Confirme para imprimir');">
-                            <input type="hidden" name="idEscola" value="<?php echo $row['idEscola'];?>"><button class="btn btn-danger" type="submit">Imprimir</button></form></a></td>
-                    <a tbody>
                         </table>
                     </div>
                 </div>

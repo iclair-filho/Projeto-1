@@ -1,5 +1,6 @@
 <?php
 include '../app/controller/verificaLogin.php';
+
 ?>
 
 <!DOCTYPE html>
@@ -108,7 +109,7 @@ include '../app/controller/verificaLogin.php';
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                     data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
-                                    Nome do Usuario
+                                   <?php echo $_SESSION['cpf'];?>
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                     <li><a class="dropdown-item" href="#"><i class='bx bx-user'></i> Perfil</a></li>

@@ -54,7 +54,7 @@ include '../app/controller/verificaLogin.php';
                 </div>
                 <ul class="sub-menu">
                     <li><a class="link_name" href="#">Cadastro</a></li>
-                    <li><a href="#">Usuários</a></li>
+                    <li><a href="usuario.php">Usuários</a></li>
                     <li><a href="setor.php">Setor</a></li>
                     <li><a href="escola.php">Escola</a></li>
                     <li><a href="visita.php">Visitas</a></li>
@@ -71,7 +71,7 @@ include '../app/controller/verificaLogin.php';
                 <ul class="sub-menu">
                     <li><a class="link_name" href="#">Relatórios</a></li>
                     <li><a href="#">Setores</a></li>
-                    <li><a href="#">Escolas</a></li>
+                    <li><a href="../app/controller/relatorioEscola.php" target="_blank">Escolas</a></li>
                     <li><a href="#">Visitas</a></li>
                 </ul>
             </li>

@@ -1,9 +1,7 @@
 <?php
 session_start();
 
-if(isset($_SESSION['cpf']) && !empty($_SESSION['cpf'])){
-}else{
+if(!$_SESSION['cpf']){
     header('Location: ../../index.html');
 }
-
 ?>

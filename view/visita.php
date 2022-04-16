@@ -82,6 +82,7 @@ include '../app/controller/connection.php'
             <div class="card">
                 <div class="card-body">
                     <table class="table table-hover" id="tabela_javascript">
+                    <a class="btn btn-danger" href="../app/controller/relatorioVisita.php" target="_blank">Imprimir</a>
                         <thead>
                             <tr>
                                 <th scope="col">Setor</th>
@@ -116,6 +117,7 @@ include '../app/controller/connection.php'
                                     <a href="../app/controller/deleteVisita.php?idVisita=<?php echo $row['idVisita'];?>"
                                         onclick="return confirm('Deseja realmente deletar essa Visita?')"><i
                                             class='bx bxs-trash bg-danger'></i></a>
+                                    <a href="../app/controller/relatorioVisita.php?idVisita=<?php echo $row['idVisita']; ?>"><i class='bx bxs-report bg-info'></i></a>
                                 </td>
                             </tr>
                         </tbody>

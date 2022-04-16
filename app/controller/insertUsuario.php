@@ -13,7 +13,7 @@ try{
     $conn->beginTransaction();
     $conn->exec("INSERT INTO usuario (nomeUsuario, cpf, telUsuario, senha, tipo) VALUES ('$nomeUsuario', '$cpf', '$telUsuario', '$senhaCript', '$tipo')");
     $conn->commit();
-    echo "<script>alert('Usuario cadastrado com sucesso!');window.location.href='../../index.html';</script>";
+    echo "<script>alert('Usuário cadastrado com sucesso!');window.location.href='../../view/usuario.php';</script>";
 
 }catch(PDOException $e){
     $conn->rollBack();

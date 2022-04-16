@@ -1,5 +1,6 @@
 <?php
 include '../app/controller/verificaLogin.php';
+
 ?>
 
 <!DOCTYPE html>
@@ -53,7 +54,7 @@ include '../app/controller/verificaLogin.php';
                 </div>
                 <ul class="sub-menu">
                     <li><a class="link_name" href="#">Cadastro</a></li>
-                    <li><a href="#">Usuários</a></li>
+                    <li><a href="usuario.php">Usuários</a></li>
                     <li><a href="setor.php">Setor</a></li>
                     <li><a href="escola.php">Escola</a></li>
                     <li><a href="visita.php">Visitas</a></li>
@@ -70,7 +71,7 @@ include '../app/controller/verificaLogin.php';
                 <ul class="sub-menu">
                     <li><a class="link_name" href="#">Relatórios</a></li>
                     <li><a href="#">Setores</a></li>
-                    <li><a href="#">Escolas</a></li>
+                    <li><a href="../app/controller/relatorioEscola.php" target="_blank">Escolas</a></li>
                     <li><a href="#">Visitas</a></li>
                 </ul>
             </li>
@@ -108,7 +109,8 @@ include '../app/controller/verificaLogin.php';
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                     data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
-                                    Nome do Usuario
+                                   <?php echo "Bem-vindo,";?>
+                                    <?php echo $_SESSION['cpf'];?>
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                     <li><a class="dropdown-item" href="#"><i class='bx bx-user'></i> Perfil</a></li>

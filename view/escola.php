@@ -70,7 +70,6 @@ include '../app/controller/connection.php';
                 <div class="card">
                     <div class="card-body">
                         <table class="table table-hover" id="tabela_javascript">
-                            <a href="../app/controller/relatorioEscola.php" target="_blank"><button class="btn btn-danger" type="submit">Imprimir</button></a>
                             <thead>
                                 <tr>
                                     <th scope="col">Setor</th>

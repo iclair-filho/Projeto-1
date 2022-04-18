@@ -16,7 +16,7 @@ include '../app/controller/connection.php'
                     <div class="card-header">Visita</div>
                     <div class="card-body">
                         <form class="row g-3" action="../app/controller/insertVisita.php" method="POST">
-                            <div class="col-4">
+                            <div class="col-md-4 col-sm-12">
                                 <label for="exampleFormControlInput1" class="visually-hidden">Setor</label>
                                 <select class="form-select form-select-sm" aria-label=".form-select-sm example">
                                     <option selected>-- Selecione o Setor --</option>
@@ -38,7 +38,7 @@ include '../app/controller/connection.php'
                                     ?>
                                 </select>
                             </div>
-                            <div class="col-8">
+                            <div class="col-md-8 col-sm-12">
                                 <label for="exampleFormControlInput1" class="visually-hidden">Nome da Escola</label>
                                 <input type="text" name="nomeEscola" class="form-control form-control-sm"
                                     id="nomeEscola" placeholder="Nome da escola" required>
@@ -82,7 +82,7 @@ include '../app/controller/connection.php'
             <div class="card">
                 <div class="card-body">
                     <table class="table table-hover" id="tabela_javascript">
-                    <a class="btn btn-danger" href="../app/controller/relatorioVisita.php" target="_blank">Imprimir</a>
+                    
                         <thead>
                             <tr>
                                 <th scope="col">Setor</th>
@@ -101,6 +101,9 @@ include '../app/controller/connection.php'
         $sqlSelect->setFetchMode(PDO::FETCH_ASSOC);
 
         foreach(new RecursiveArrayIterator($sqlSelect->fetchAll()) as $x => $row){
+            $date = date_create($row['dataVisita']);
+
+
 
 ?>
                         <tbody>
@@ -109,8 +112,8 @@ include '../app/controller/connection.php'
                                 <td><?php echo "Escola"?></td>
                                 <td><?php echo $row['nomeProf'];?></td>
                                 <td><?php echo $row['qtAluno'];?></td>
-                                <td><?php echo $row['conteudoDia'];?></td>
-                                <td><?php echo $row['dataVisita'];?></td>
+                                <td class="col-md-4"><?php echo $row['conteudoDia'];?></td>
+                                <td><?php echo date_format($date,"d/m/Y");?></td>
                                 <td>
                                     <a href="editarVisita.php?idVisita=<?php echo $row['idVisita']; ?>"><i
                                             class='bx bxs-edit bg-warning'></i></a>

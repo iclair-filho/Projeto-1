@@ -326,7 +326,12 @@ tbody a i {
   background-color: var(--blue_2);
   color: white;
 }
-
+/* Button DataTable */
+.dt-button{
+  font-size: 0.75em !important;
+  color: #fff !important;
+  background-color: var(--blue) !important;
+}
 /* Responsividade */
 @media (max-width: 700px) {
   .sidebar.close .nav-links li .sub-menu {

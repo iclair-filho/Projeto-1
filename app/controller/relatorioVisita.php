@@ -45,7 +45,7 @@ $pdf->Ln();
 $pdf->Cell(95, 10, "CPF: " .$row['qtAluno']. "", 1, 0);
 $pdf->Cell(95, 10, "RG: " .$row['conteudoDia']. "", 1, 0);
 $pdf->Ln();
-$pdf->Cell(95, 10, "Email: " .$row[' telProf']. "", 1, 0);
+$pdf->Cell(95, 10, "Email: " .$row['telProf']. "", 1, 0);
 $pdf->Cell(95, 10, "Telefone: " .$row['dataVisita']. "", 1, 0);
 $pdf->Ln();
 $pdf->Ln();

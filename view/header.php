@@ -129,7 +129,7 @@ include '../app/controller/verificaLogin.php';
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>
-                                    <li><a class="dropdown-item" href="../../../app/controller/logout.php"><i
+                                    <li><a class="dropdown-item" href="./../app/controller/logout.php"><i
                                                 class='bx bx-exit'></i> Sair</a></li>
                                 </ul>
                             </li>

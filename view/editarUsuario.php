@@ -27,23 +27,23 @@ foreach(new RecursiveArrayIterator($sqlSelect->fetchAll()) as $x => $row){
                   <form class="row g-3" action="../app/controller/updateUsuario.php" method="POST">
                       <input type="hidden" name="idUsuario" value="<?php echo $row['idUsuario'];?>">
                     <div class="col-5">
-                      <label class="visually-hidden">Nome Completo</label>
+                      <label class="col-form-label-sm">Nome Completo</label>
                       <input type="text" name="nomeUsuario" class="form-control form-control-sm" id="nomeUsuario" placeholder="Nome Completo">
                     </div>
                     <div class="col-5">
-                      <label for="staticEmail2" class="visually-hidden">CPF</label>
+                      <label for="staticEmail2" class="col-form-label-sm">CPF</label>
                       <input type="text" name="cpf" class="form-control form-control-sm" id="cpf" placeholder="CPF">
                     </div>
                     <div class="col-5">
-                      <label for="staticEmail2" class="visually-hidden">Telefone</label>
+                      <label for="staticEmail2" class="col-form-label-sm">Telefone</label>
                       <input type="tel" name="telUsuario" class="form-control form-control-sm" id="telUsuario" placeholder="Telefone">
                     </div>
                     <div class="col-5">
-                      <label for="staticEmail2" class="visually-hidden">Senha</label>
+                      <label for="staticEmail2" class="col-form-label-sm">Senha</label>
                       <input type="password" name="senha" class="form-control form-control-sm" id="senha" placeholder="Senha">
                     </div>
                     <div class="col-5">
-                      <label for="staticEmail2" class="visually-hidden">Confirmar Senha</label>
+                      <label for="staticEmail2" class="col-form-label-sm">Confirmar Senha</label>
                       <input type="password" name="confirmarsenha" class="form-control form-control-sm" id="confirmarsenha" placeholder="Confirmar Senha">
                     </div>
                     <div class="col-2">

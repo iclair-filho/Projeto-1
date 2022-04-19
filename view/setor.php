@@ -18,11 +18,11 @@ include '../app/controller/connection.php';
                 <div class="card-body text-primary">
                   <form class="row g-3" action="../app/controller/insertSetor.php" method="POST">
                     <div class="col-5">
-                      <label class="visually-hidden">Setor</label>
+                      <label class="col-form-label-sm">Setor</label>
                       <input type="text" name="setor" class="form-control form-control-sm" id="setor" placeholder="Descrição">
                     </div>
                     <div class="col-5">
-                      <label for="staticEmail2" class="visually-hidden">Localidade</label>
+                      <label for="staticEmail2" class="col-form-label-sm">Localidade</label>
                       <input type="text" name="localidade" class="form-control form-control-sm" id="localidade" placeholder="Localidade">
                     </div>
                     <div class="col-2">

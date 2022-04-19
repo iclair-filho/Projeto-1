@@ -27,11 +27,11 @@ foreach(new RecursiveArrayIterator($sqlSelect->fetchAll()) as $x => $row){
                   <form class="row g-3" action="../app/controller/updateSetor.php" method="POST">
                       <input type="hidden" name="idSetor" value="<?php echo $row['idSetor'];?>">
                     <div class="col-5">
-                      <label class="visually-hidden">Setor</label>
+                      <label class="col-form-label-sm">Setor</label>
                       <input type="text" name="setor" class="form-control form-control-sm" id="setor" placeholder="Descrição" value="<?php echo $row['setor'];?>">
                     </div>
                     <div class="col-5">
-                      <label for="staticEmail2" class="visually-hidden">Localidade</label>
+                      <label for="staticEmail2" class="col-form-label-sm">Localidade</label>
                       <input type="text" name="localidade" class="form-control form-control-sm" id="localidade" placeholder="Localidade" value="<?php echo $row['localidade'];?>">
                     </div>
                     <div class="col-2">

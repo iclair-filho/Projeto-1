@@ -17,7 +17,7 @@ include '../app/controller/connection.php'
                     <div class="card-body">
                         <form class="row g-3" action="../app/controller/insertVisita.php" method="POST">
                             <div class="col-md-4 col-sm-12">
-                                <label for="exampleFormControlInput1">Setor</label>
+                                <label for="exampleFormControlInput1" class="col-form-label-sm">Setor</label>
                                 <select class="form-select form-select-sm" aria-label=".form-select-sm example">
                                     <option selected>-- Selecione o Setor --</option>
                                     <?php
@@ -39,28 +39,28 @@ include '../app/controller/connection.php'
                                 </select>
                             </div>
                             <div class="col-md-8 col-sm-12">
-                                <label for="exampleFormControlInput1">Nome da Escola</label>
+                                <label for="exampleFormControlInput1" class="col-form-label-sm">Nome da Escola</label>
                                 <input type="text" name="nomeEscola" class="form-control form-control-sm"
                                     id="nomeEscola" placeholder="Nome da escola" required>
                             </div>
                             <div class="col-6">
-                                <label for="exampleFormControlInput1">Professor</label>
+                                <label for="exampleFormControlInput1" class="col-form-label-sm">Professor</label>
                                 <input type="text" name="nomeProf" class="form-control form-control-sm" id="nomeProf"
                                     placeholder="Professor" required>
                             </div>
                             <div class="col-6">
-                                <label for="exampleFormControlInput1">Telefone
+                                <label for="exampleFormControlInput1" class="col-form-label-sm">Telefone
                                     (professor)</label>
                                 <input type="tel" name="telProf" class="form-control form-control-sm" id="telProf"
                                     placeholder="Telefone (professor)" required>
                             </div>
                             <div class="col-6">
-                                <label for="exampleFormControlInput1">Número de alunos</label>
+                                <label for="exampleFormControlInput1" class="col-form-label-sm">Número de alunos</label>
                                 <input type="number" name="qtAluno" class="form-control form-control-sm" id="qtAluno"
                                     placeholder="Número de alunos" required>
                             </div>
                             <div class="col-6">
-                                <label for="exampleFormControlInput1">Data da visita</label>
+                                <label for="exampleFormControlInput1" class="col-form-label-sm">Data da visita</label>
                                 <input type="date" name="dataVisita" class="form-control form-control-sm"
                                     id="dataVisita" required>
                             </div>

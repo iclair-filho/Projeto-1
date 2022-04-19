@@ -2,6 +2,7 @@
 include "connection.php";
 
 $idVisita = $_POST['idVisita'];
+$escola = $_POST['nomeEscola'];
 $coordenador = $_POST['coordenador'];
 $qtAluno = $_POST['qtAluno'];
 $conteudoDia = $_POST['conteudoDia'];
@@ -10,7 +11,7 @@ $telProf = $_POST['telProf'];
 $dataVisita = $_POST['dataVisita'];
 
 try{
-    $sql = "UPDATE visita SET coordenador = '$coordenador', qtAluno = '$qtAluno', conteudoDia = '$conteudoDia', nomeProf = '$nomeProf', telProf = '$nomeProf', datavisita = '$dataVisita' WHERE idVisita = '$idVisita'";
+    $sql = "UPDATE visita SET nomeEscola = '$escola', coordenador = '$coordenador', qtAluno = '$qtAluno', conteudoDia = '$conteudoDia', nomeProf = '$nomeProf', telProf = '$nomeProf', datavisita = '$dataVisita' WHERE idVisita = '$idVisita'";
     $sql = $conn->prepare($sql);
     $sql->execute();
 

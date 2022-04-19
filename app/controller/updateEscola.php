@@ -8,7 +8,7 @@ $localidade = $_POST['localidade'];
 $idSetor = $_POST['idSetor'];
 
 try{
-    $sql = "UPDATE escola SET nomeEscola = '$nomeEscola', responsavel = '$responsavel', localidadeEscola = '$localidade', idSetor='$idSetor' WHERE idEscola = '$idEscola'";
+    $sql = "UPDATE escola SET nomeEscola = '$nomeEscola', responsavel = '$responsavel', localidade = '$localidade', idSetor='$idSetor' WHERE idEscola = '$idEscola'";
     $sql = $conn->prepare($sql);
     $sql->execute();
 

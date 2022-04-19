@@ -100,7 +100,9 @@ include '../app/controller/connection.php'
                         </thead>
                         <?php
     try{
-        $sqlSelect = $conn->prepare("SELECT * FROM visita");
+        $sqlSelect = $conn->prepare("SELECT * FROM visita v 
+        join setor s on v.idSetor = s.idSetor
+        join escola e on v.idEscola = e.idEscola");
         $sqlSelect->execute();
         $sqlSelect->setFetchMode(PDO::FETCH_ASSOC);
 
@@ -112,8 +114,8 @@ include '../app/controller/connection.php'
 ?>
                         <tbody>
                             <tr>
-                                <td><?php echo "Setor"?></td>
-                                <td><?php echo "Escola"?></td>
+                                <td><?php echo $row['setor']?></td>
+                                <td><?php echo $row['nomeEscola']?></td>
                                 <td><?php echo $row['nomeProf'];?></td>
                                 <td><?php echo $row['qtAluno'];?></td>
                                 <td class="col-md-4"><?php echo $row['conteudoDia'];?></td>
@@ -154,7 +156,7 @@ google.load("jquery", "3.6.0");
 </script>
 
 <script type="text/javascript">
-    
+
 $(function() {
     $('#setor').change(function() {
         if ($(this).val()) {

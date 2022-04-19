@@ -76,7 +76,7 @@ include '../app/controller/connection.php';
                                     <th scope="col">Escola</th>
                                     <th scope="col">Localidade</th>
                                     <th scope="col">Responsável</th>
-                                    <th scope="col">Ações</th>
+                                    <th scope="col">Ações</th> 
                                 </tr>
                             </thead>
                             <?php 

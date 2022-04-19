@@ -1,9 +1,14 @@
+<?php
+include '../app/controller/verificaLogin.php';
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
-    
+
     <link rel="stylesheet" href="assets/css/styles.css">
     <!-- BootStrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -17,6 +22,16 @@
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- JavaScript -->
+    <script type="text/javascript" src="../view/assets/js/jquery-1.2.6.pack.js"></script>
+    <script type="text/javascript" src="../view/assets/js/jquery.maskedinput-1.1.4.pack.js"></script>
+    <script src="../view/assets/js/script.jS" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"
+        defer></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+        integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"
+        defer></script>
 
     <!-- Styles Esternos -->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
@@ -49,7 +64,7 @@
                 </div>
                 <ul class="sub-menu">
                     <li><a class="link_name" href="#">Cadastro</a></li>
-                    <li><a href="#">Usuários</a></li>
+                    <li><a href="usuario.php">Usuários</a></li>
                     <li><a href="setor.php">Setor</a></li>
                     <li><a href="escola.php">Escola</a></li>
                     <li><a href="visita.php">Visitas</a></li>
@@ -66,7 +81,7 @@
                 <ul class="sub-menu">
                     <li><a class="link_name" href="#">Relatórios</a></li>
                     <li><a href="#">Setores</a></li>
-                    <li><a href="#">Escolas</a></li>
+                    <li><a href="../app/controller/relatorioEscola.php" target="_blank">Escolas</a></li>
                     <li><a href="#">Visitas</a></li>
                 </ul>
             </li>
@@ -104,7 +119,8 @@
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                     data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
-                                    Nome do Usuario
+                                    <?php echo "Bem-vindo,";?>
+                                    <?php echo $_SESSION['cpf'];?>
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                     <li><a class="dropdown-item" href="#"><i class='bx bx-user'></i> Perfil</a></li>
@@ -113,7 +129,8 @@
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>
-                                    <li><a class="dropdown-item" href="#"><i class='bx bx-exit'></i> Sair</a></li>
+                                    <li><a class="dropdown-item" href="../../../app/controller/logout.php"><i
+                                                class='bx bx-exit'></i> Sair</a></li>
                                 </ul>
                             </li>
 

@@ -120,7 +120,7 @@ include '../app/controller/verificaLogin.php';
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                     data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
                                     <?php echo "Bem-vindo,";?>
-                                    <?php echo $_SESSION['cpf'];?>
+                                    <spam class="text-dark"><?php echo $_SESSION['cpf'];?></spam>
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                     <li><a class="dropdown-item" href="#"><i class='bx bx-user'></i> Perfil</a></li>
@@ -129,7 +129,7 @@ include '../app/controller/verificaLogin.php';
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>
-                                    <li><a class="dropdown-item" href="../../../app/controller/logout.php"><i
+                                    <li><a class="dropdown-item" href="./../app/controller/logout.php"><i
                                                 class='bx bx-exit'></i> Sair</a></li>
                                 </ul>
                             </li>

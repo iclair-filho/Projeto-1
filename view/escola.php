@@ -101,6 +101,8 @@ include '../app/controller/connection.php';
                                         <a href="../app/controller/deleteEscola.php?idEscola=<?php echo $row['idEscola'];?>"
                                             onclick="return confirm('Deseja realmente deletar esta Escola?')"><i
                                                 class='bx bxs-trash bg-danger'></i></a>
+                                        <a href="../app/controller/relatorioEscola.php?idEscola=<?php echo $row['idEscola']; ?>"
+                                        target=_blank><i class='bx bxs-report bg-info'></i></a>
                                     </td>
                                 </tr>
                             </tbody>

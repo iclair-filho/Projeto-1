@@ -2,7 +2,8 @@
 include 'connection.php';
 include '../fpdf/fpdf.php';
 
-$sqlSelect = $conn->prepare("SELECT * FROM escola" );
+$idEscola = $_GET['idEscola'];
+$sqlSelect = $conn->prepare("SELECT * FROM escola WHERE idEscola = $idEscola");
 $sqlSelect->execute();
 $sqlSelect->setFetchMode(PDO::FETCH_ASSOC);
 
@@ -18,7 +19,7 @@ $pdf->Ln(15);
 $pdf->SetFont("Arial", "B", 12);
 $pdf->Cell(190, 10, "NOME DA ESCOLA", 1 , 1, "C");
 $pdf->SetFont("Arial", "", 12);
-$pdf->Cell(190, 10, "N ome da Escola: ".utf8_decode($rowEscola['nomeEscola']),"", 1);
+$pdf->Cell(190, 10, "Nome da Escola: ".utf8_decode($rowEscola['nomeEscola']),"", 1);
 $pdf->Ln();
 
 

@@ -2,6 +2,7 @@
 include 'header.php';
 include '../app/controller/connection.php';
 ?>
+
      <div class="conteudo">
        <div class="container-fluid">
          <nav aria-label="breadcrumb">
@@ -24,7 +25,7 @@ include '../app/controller/connection.php';
                     </div>
                     <div class="col-5">
                       <label for="staticEmail2" class="col-form-label-sm">CPF</label>
-                      <input type="text" name="cpf" class="form-control form-control-sm" id="cpf" placeholder="CPF">
+                      <input type="text" name="cpf" id="cpf" class="form-control form-control-sm" placeholder="CPF">
                     </div>
                     <div class="col-5">
                       <label for="staticEmail2" class="col-form-label-sm">Telefone</label>

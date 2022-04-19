@@ -18,7 +18,8 @@ include '../app/controller/connection.php'
                         <form class="row g-3" action="../app/controller/insertVisita.php" method="POST">
                             <div class="col-md-4 col-sm-12">
                                 <label for="exampleFormControlInput1" class="col-form-label-sm">Setor</label>
-                                <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                                <select class="form-select form-select-sm" aria-label=".form-select-sm example"
+                                    name="setor" id="setor">
                                     <option selected>-- Selecione o Setor --</option>
                                     <?php
                                       try{
@@ -40,8 +41,11 @@ include '../app/controller/connection.php'
                             </div>
                             <div class="col-md-8 col-sm-12">
                                 <label for="exampleFormControlInput1" class="col-form-label-sm">Nome da Escola</label>
-                                <input type="text" name="nomeEscola" class="form-control form-control-sm"
-                                    id="nomeEscola" placeholder="Nome da escola" required>
+                                <select class="form-select form-select-sm" aria-label=".form-select-sm example"
+                                    name="nomeEscola" id="nomeEscola">
+                                    <option value="">Escolha a Escola</option>
+
+                                </select>
                             </div>
                             <div class="col-6">
                                 <label for="exampleFormControlInput1" class="col-form-label-sm">Professor</label>
@@ -82,7 +86,7 @@ include '../app/controller/connection.php'
             <div class="card">
                 <div class="card-body">
                     <table class="table table-hover" id="tabela_javascript">
-                    
+
                         <thead>
                             <tr>
                                 <th scope="col">Setor</th>
@@ -120,7 +124,8 @@ include '../app/controller/connection.php'
                                     <a href="../app/controller/deleteVisita.php?idVisita=<?php echo $row['idVisita'];?>"
                                         onclick="return confirm('Deseja realmente deletar essa Visita?')"><i
                                             class='bx bxs-trash bg-danger'></i></a>
-                                    <a href="../app/controller/relatorioVisita.php?idVisita=<?php echo $row['idVisita']; ?>" target=_blank><i class='bx bxs-report bg-info'></i></a>
+                                    <a href="../app/controller/relatorioVisita.php?idVisita=<?php echo $row['idVisita']; ?>"
+                                        target=_blank><i class='bx bxs-report bg-info'></i></a>
                                 </td>
                             </tr>
                         </tbody>
@@ -141,3 +146,35 @@ include '../app/controller/connection.php'
 <?php
 include 'footer.php';
 ?>
+
+
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">
+google.load("jquery", "3.6.0");
+</script>
+
+<script type="text/javascript">
+    
+$(function() {
+    $('#setor').change(function() {
+        if ($(this).val()) {
+            $('#nomeEscola').hide();
+            $('.carregando').show();
+            $.getJSON('../app/controller/script_escola.php?search=', {
+                setor: $(this).val(),
+                ajax: 'true'
+            }, function(j) {
+                var options = '<option value="">Escolha a Escola</option>';
+                for (var i = 0; i < j.length; i++) {
+                    options += '<option value="' + j[i].idEscola + '">' + j[i].nomeEscola +
+                        '</option>';
+                }
+                $('#nomeEscola').html(options).show();
+                $('.carregando').hide();
+            });
+        } else {
+            $('#nomeEscola').html('<option value="">– Escolha a Escola –</option>');
+        }
+    });
+});
+</script>

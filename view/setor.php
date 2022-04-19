@@ -6,7 +6,7 @@ include '../app/controller/connection.php';
        <div class="container-fluid">
          <nav aria-label="breadcrumb">
           <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
             <li class="breadcrumb-item active" aria-current="page">Setor</li>
           </ol>
         </nav> 
@@ -18,11 +18,11 @@ include '../app/controller/connection.php';
                 <div class="card-body text-primary">
                   <form class="row g-3" action="../app/controller/insertSetor.php" method="POST">
                     <div class="col-5">
-                      <label class="visually-hidden">Setor</label>
+                      <label class="col-form-label-sm">Setor</label>
                       <input type="text" name="setor" class="form-control form-control-sm" id="setor" placeholder="Descrição">
                     </div>
                     <div class="col-5">
-                      <label for="staticEmail2" class="visually-hidden">Localidade</label>
+                      <label for="staticEmail2" class="col-form-label-sm">Localidade</label>
                       <input type="text" name="localidade" class="form-control form-control-sm" id="localidade" placeholder="Localidade">
                     </div>
                     <div class="col-2">
@@ -37,7 +37,7 @@ include '../app/controller/connection.php';
           <div class="col-12">
             <div class="card">
               <div class="card-body">
-                <table class="table table-hover">
+                <table class="table table-hover" id="tabela_javascript">
                   <thead>
                     <tr>
                       <th scope="col">Nome do setor</th>
@@ -60,7 +60,7 @@ include '../app/controller/connection.php';
                       <td><?= $row['localidade'];?></td>
                       <td>
                         <a href="editarSetor.php?idSetor=<?= $row['idSetor'];?>"><i class='bx bxs-edit bg-warning'></i></a>
-                        <a href="../app/controller/deleteSetor.php?idSetor=<?= $row['idSetor'] ?>"><i class='bx bxs-trash bg-danger'></i></a>
+                        <a onclick="return confirm('Deseja excluir?')" href="../app/controller/deleteSetor.php?idSetor=<?= $row['idSetor'] ?>"><i class='bx bxs-trash bg-danger'></i></a>
                       </td>                     
                     </tr>
                   </tbody>

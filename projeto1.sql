@@ -9,7 +9,7 @@
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
-SET time_zone = "+00:00";
+SET time_zone = "-03:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -28,18 +28,11 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `escola` (
-  `idEscola` int() NOT NULL,
+  `idEscola` int NOT NULL,
   `nomeEscola` varchar(255) NOT NULL,
   `responsavel` varchar(255) NOT NULL,
   `localidade` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Extraindo dados da tabela `escola`
---
-
-INSERT INTO `escola` (`idEscola`, `nomeEscola`, `responsavel`, `localidade`) VALUES
-(3, 'teste', 'teste', 'teste');
 
 -- --------------------------------------------------------
 
@@ -48,7 +41,7 @@ INSERT INTO `escola` (`idEscola`, `nomeEscola`, `responsavel`, `localidade`) VAL
 --
 
 CREATE TABLE `setor` (
-  `idSetor` int() NOT NULL,
+  `idSetor` int NOT NULL,
   `setor` varchar(255) NOT NULL,
   `localidade` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -60,12 +53,12 @@ CREATE TABLE `setor` (
 --
 
 CREATE TABLE `usuario` (
-  `idUsuario` int() NOT NULL,
+  `idUsuario` int NOT NULL,
   `nomeUsuario` varchar(255) NOT NULL,
-  `cpf` varchar(255) NOT NULL,
-  `telUsuario` varchar(255) NOT NULL,
+  `cpf` varchar(14) NOT NULL,
+  `telUsuario` varchar(15) NOT NULL,
   `senha` varchar(32) NOT NULL,
-  `tipo` tinyint(1) NOT NULL
+  `tipo` varchar(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -73,9 +66,7 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`idUsuario`, `nomeUsuario`, `cpf`, `telUsuario`, `senha`, `tipo`) VALUES
-(3, 'admin', '', '', '', 0),
-(4, 'admin2', '', '', '', 0),
-(5, 'admin', '000.000.000-00', '(81)99999-9999', '21232f297a57a5a743894a0e4a801fc3', 0);
+(1, 'Admin', '000.000.000-00', '(81) 99999-9999', '21232f297a57a5a743894a0e4a801fc3', 1);
 
 -- --------------------------------------------------------
 
@@ -84,14 +75,14 @@ INSERT INTO `usuario` (`idUsuario`, `nomeUsuario`, `cpf`, `telUsuario`, `senha`,
 --
 
 CREATE TABLE `visita` (
-  `idVisita` int() NOT NULL,
+  `idVisita` int NOT NULL,
   `coordenador` varchar(255) NOT NULL,
   `qtAluno` int(255) NOT NULL,
   `conteudoDia` varchar(255) NOT NULL,
   `nomeProf` varchar(255) NOT NULL,
-  `telProf` varchar(255) NOT NULL,
-  `dataVisita` varchar(255) NOT NULL,
-  `dataCadastro` datetime(6) NOT NULL
+  `telProf` varchar(15) NOT NULL,
+  `dataVisita` varchar(8) NOT NULL,
+  `dataCadastro` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -130,25 +121,25 @@ ALTER TABLE `visita`
 -- AUTO_INCREMENT de tabela `escola`
 --
 ALTER TABLE `escola`
-  MODIFY `idEscola` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `idEscola` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 
 --
 -- AUTO_INCREMENT de tabela `setor`
 --
 ALTER TABLE `setor`
-  MODIFY `idSetor` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idSetor` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 
 --
 -- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `idUsuario` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `idUsuario` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de tabela `visita`
 --
 ALTER TABLE `visita`
-  MODIFY `idVisita` int(100) NOT NULL AUTO_INCREMENT;
+  MODIFY `idVisita` int NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -26,12 +26,14 @@ include '../app/controller/verificaLogin.php';
     <script type="text/javascript" src="../view/assets/js/jquery-1.2.6.pack.js"></script>
     <script type="text/javascript" src="../view/assets/js/jquery.maskedinput-1.1.4.pack.js"></script>
     <script src="../view/assets/js/script.jS" defer></script>
+
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"
         defer></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
         integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"
         defer></script>
+
 
     <!-- Styles Esternos -->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
@@ -129,7 +131,7 @@ include '../app/controller/verificaLogin.php';
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>
-                                    <li><a class="dropdown-item" href="../../../app/controller/logout.php"><i
+                                    <li><a class="dropdown-item" href="./../app/controller/logout.php"><i
                                                 class='bx bx-exit'></i> Sair</a></li>
                                 </ul>
                             </li>

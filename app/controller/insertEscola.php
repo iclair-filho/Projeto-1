@@ -9,7 +9,7 @@ $idSetor = $_POST['idSetor'];
 
 try{
     $conn->beginTransaction();
-    $conn->exec("INSERT INTO escola (nomeEscola, responsavel, localidadeEscola, idSetor) VALUES ('$nomeEscola', '$responsavel', '$localidade', '$idSetor')");
+    $conn->exec("INSERT INTO escola (nomeEscola, responsavel, localidade, idSetor) VALUES ('$nomeEscola', '$responsavel', '$localidade', '$idSetor')");
     $conn->commit();
     echo "<script>alert('Escola cadastrada com sucesso.');window.location.href='../../view/escola.php';</script>";
     

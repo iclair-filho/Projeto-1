@@ -7,6 +7,7 @@ include '../app/controller/connection.php';
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
+                <li class="breadcrumb-item"><a href=#>Cadastro</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Escola</li>
             </ol>
         </nav>
@@ -93,7 +94,7 @@ include '../app/controller/connection.php';
                                 <tr>
                                     <td><?= $row['setor'];?></td>
                                     <td><?php echo $row['nomeEscola'];?></td>
-                                    <td><?php echo $row['localidadeEscola'];?></td>
+                                    <td><?php echo $row['localidade'];?></td>
                                     <td><?php echo $row['responsavel'];?></td>
                                     <td>
                                         <a href="editarEscola.php?idEscola=<?php echo $row['idEscola']; ?>"><i
@@ -101,6 +102,8 @@ include '../app/controller/connection.php';
                                         <a href="../app/controller/deleteEscola.php?idEscola=<?php echo $row['idEscola'];?>"
                                             onclick="return confirm('Deseja realmente deletar esta Escola?')"><i
                                                 class='bx bxs-trash bg-danger'></i></a>
+                                        <a href="../app/controller/relatorioEscola.php?idEscola=<?php echo $row['idEscola']; ?>"
+                                        target=_blank><i class='bx bxs-report bg-info'></i></a>
                                     </td>
                                 </tr>
                             </tbody>

@@ -7,6 +7,7 @@ include '../app/controller/connection.php'
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
+                <li class="breadcrumb-item"><a href=#>Cadastro</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Visitas</li>
             </ol>
         </nav>
@@ -38,37 +39,52 @@ include '../app/controller/connection.php'
                                     ?>
                                 </select>
                             </div>
+                                    <?php 
+                                    try{
+                                    $idVisita = $_GET['idVisita'];
+                                    $sqlEditar = $conn->prepare("SELECT * FROM visita WHERE idVisita = $idVisita");
+                                    $sqlEditar->execute();
+                                    $sqlEditar->setFetchMode(PDO::FETCH_ASSOC);
+
+                                    foreach(new RecursiveArrayIterator($sqlEditar->fetchAll()) as $x => $rowEditar){
+                                    
+                                    ?>
                             <div class="col-md-8 col-sm-12">
                                 <label for="exampleFormControlInput1" class="col-form-label-sm">Nome da Escola</label>
-                                <input type="text" name="nomeEscola" class="form-control form-control-sm"
+                                <input type="text" name="nomeEscola" value="<?php echo $rowEditar['nomeEscola'];?>" class="form-control form-control-sm"
                                     id="nomeEscola" placeholder="Nome da escola" required>
                             </div>
                             <div class="col-6">
+                                <label for="exampleFormControlInput1" class="col-form-label-sm">Coordenador</label>
+                                <input type="text" name="coordenador" value="<?php echo $rowEditar['coordenador'];?>" class="form-control form-control-sm" id="nomeProf"
+                                    placeholder="Professor" required>
+                            </div>
+                            <div class="col-6">
                                 <label for="exampleFormControlInput1" class="col-form-label-sm">Professor</label>
-                                <input type="text" name="nomeProf" class="form-control form-control-sm" id="nomeProf"
+                                <input type="text" name="nomeProf" value="<?php echo $rowEditar['nomeProf'];?>" class="form-control form-control-sm" id="nomeProf"
                                     placeholder="Professor" required>
                             </div>
                             <div class="col-6">
                                 <label for="exampleFormControlInput1" class="col-form-label-sm">Telefone
                                     (professor)</label>
-                                <input type="tel" name="telProf" class="form-control form-control-sm" id="telProf"
+                                <input type="tel" name="telProf" value="<?php echo $rowEditar['telProf'];?>" class="form-control form-control-sm" id="telProf"
                                     placeholder="Telefone (professor)" required>
                             </div>
                             <div class="col-6">
                                 <label for="exampleFormControlInput1" class="col-form-label-sm">Número de alunos</label>
-                                <input type="number" name="qtAluno" class="form-control form-control-sm" id="qtAluno"
+                                <input type="number" name="qtAluno" value="<?php echo $rowEditar['qtAluno'];?>" class="form-control form-control-sm" id="qtAluno"
                                     placeholder="Número de alunos" required>
                             </div>
                             <div class="col-6">
                                 <label for="exampleFormControlInput1" class="col-form-label-sm">Data da visita</label>
-                                <input type="date" name="dataVisita" class="form-control form-control-sm"
+                                <input type="date" name="dataVisita" value="<?php echo $rowEditar['dataVisita'];?>" class="form-control form-control-sm"
                                     id="dataVisita" required>
                             </div>
                             <div class="col-6">
                                 <label for="exampleFormControlTextarea1" class="col-form-label-sm">Conteúdo do
                                     dia</label>
                                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
-                                    name="conteudoDia" placeholder="Conteudo do dia " required></textarea>
+                                    name="conteudoDia" value="<?php echo $rowEditar['conteudoDia'];?>" placeholder="Conteudo do dia " required></textarea>
                             </div>
                             <div class="col-2 align-self-end">
                                 <button type="submit" class="btn btn-primary btn-sm mb-3">Cadastrar</button>
@@ -78,6 +94,12 @@ include '../app/controller/connection.php'
                 </div>
             </div>
         </div>
+        <?php 
+                                    }   
+                }catch(PDOException $e){
+                    echo "error: " . $e->getMessage();
+                }
+                    ?>
         <div class="col-12">
             <div class="card">
                 <div class="card-body">

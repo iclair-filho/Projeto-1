@@ -7,6 +7,7 @@ include '../app/controller/connection.php';
          <nav aria-label="breadcrumb">
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
+            <li class="breadcrumb-item"><a href=#>Cadastro</a></li>
             <li class="breadcrumb-item active" aria-current="page">Setor</li>
           </ol>
         </nav> 
@@ -61,6 +62,8 @@ include '../app/controller/connection.php';
                       <td>
                         <a href="editarSetor.php?idSetor=<?= $row['idSetor'];?>"><i class='bx bxs-edit bg-warning'></i></a>
                         <a onclick="return confirm('Deseja excluir?')" href="../app/controller/deleteSetor.php?idSetor=<?= $row['idSetor'] ?>"><i class='bx bxs-trash bg-danger'></i></a>
+                        <a href="../app/controller/relatorioSetor.php?idSetor=<?php echo $row['idSetor']; ?>"
+                        target=_blank><i class='bx bxs-report bg-info'></i></a>
                       </td>                     
                     </tr>
                   </tbody>

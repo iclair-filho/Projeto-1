@@ -2,11 +2,13 @@
 include 'header.php';
 include '../app/controller/connection.php';
 ?>
+
      <div class="conteudo">
        <div class="container-fluid">
          <nav aria-label="breadcrumb">
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
+            <li class="breadcrumb-item"><a href=#>Cadastro</a></li>
             <li class="breadcrumb-item active" aria-current="page">Usuários</li>
           </ol>
         </nav> 
@@ -23,7 +25,7 @@ include '../app/controller/connection.php';
                     </div>
                     <div class="col-5">
                       <label for="staticEmail2" class="col-form-label-sm">CPF</label>
-                      <input type="text" name="cpf" class="form-control form-control-sm" id="cpf" placeholder="CPF">
+                      <input type="text" name="cpf" id="cpf" class="form-control form-control-sm" placeholder="CPF">
                     </div>
                     <div class="col-5">
                       <label for="staticEmail2" class="col-form-label-sm">Telefone</label>
@@ -75,6 +77,8 @@ include '../app/controller/connection.php';
                       <td>
                         <a href="editarUsuario.php?idUsuario=<?= $row['idUsuario'];?>"><i class='bx bxs-edit bg-warning'></i></a>
                         <a onclick="return confirm('Deseja excluir?')" href="../app/controller/deleteUsuario.php?idUsuario=<?= $row['idUsuario'] ?>"><i class='bx bxs-trash bg-danger'></i></a>
+                        <a href="../app/controller/relatorioUsuario.php?idUsuario=<?php echo $row['idUsuario']; ?>"
+                                        target=_blank><i class='bx bxs-report bg-info'></i></a>
                       </td>                     
                     </tr>
                   </tbody>

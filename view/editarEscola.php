@@ -7,6 +7,7 @@ include '../app/controller/connection.php';
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><a href=#>Cadastro</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Escola</li>
             </ol>
         </nav>
@@ -65,7 +66,7 @@ include '../app/controller/connection.php';
                             <div class="col-4">
                                 <label for="exampleFormControlInput1" class="col-form-label-sm">Localidade</label>
                                 <input type="text" name="localidade" class="form-control form-control-sm"
-                                    id="exampleFormControlInput1" value="<?php echo $row['localidadeEscola'];?>">
+                                    id="exampleFormControlInput1" value="<?php echo $row['localidade'];?>">
                             </div>
                             <div class="col-6">
                                 <label for="exampleFormControlInput1" class="col-form-label-sm">Responsável</label>
@@ -108,7 +109,7 @@ include '../app/controller/connection.php';
                                 <tr>
                                     <td><?= $row['setor'];?></td>
                                     <td><?php echo $row['nomeEscola'];?></td>
-                                    <td><?php echo $row['localidadeEscola'];?></td>
+                                    <td><?php echo $row['localidade'];?></td>
                                     <td><?php echo $row['responsavel'];?></td>
                                     <td>
                                         <a href="editarEscola.php?idEscola=<?php echo $row['idEscola']; ?>"><i

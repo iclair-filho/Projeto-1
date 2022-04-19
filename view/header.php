@@ -82,7 +82,7 @@ include '../app/controller/verificaLogin.php';
                     <li><a class="link_name" href="#">Relatórios</a></li>
                     <li><a href="#">Setores</a></li>
                     <li><a href="../app/controller/relatorioEscola.php" target="_blank">Escolas</a></li>
-                    <li><a href="#">Visitas</a></li>
+                    <li><a href="../app/controller/relatorioVisita.php" target="_blank">Visitas</a></li>
                 </ul>
             </li>
             <li>

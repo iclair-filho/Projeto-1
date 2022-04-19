@@ -94,7 +94,7 @@ include '../app/controller/connection.php';
                                 <tr>
                                     <td><?= $row['setor'];?></td>
                                     <td><?php echo $row['nomeEscola'];?></td>
-                                    <td><?php echo $row['localidadeEscola'];?></td>
+                                    <td><?php echo $row['localidade'];?></td>
                                     <td><?php echo $row['responsavel'];?></td>
                                     <td>
                                         <a href="editarEscola.php?idEscola=<?php echo $row['idEscola']; ?>"><i

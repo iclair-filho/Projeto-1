@@ -11,7 +11,7 @@ function Header(){
 
         $this->SetFont('Arial','B',15);
         $this->Cell(80);
-        $this->Cell(30,10,'RecFeira',0,0,'C');
+        $this->Cell(30,10,'Visitas',0,0,'C');
         $this->Ln(20);
     }
 //footer
@@ -33,7 +33,7 @@ $pdf = new PDF();
 $pdf->AddPage();
 
 $pdf->SetFont('Arial', 'B', '16');
-$pdf->Cell(190, 10, "FICHA CADASTRAL DE FEIRANTE", 0, 1, "C");
+$pdf->Cell(190, 10, "Relatório de Visitas  '", 0, 1, "C");
 $pdf->Ln(15);
 
 $pdf->SetFont("Arial", "B", 12);

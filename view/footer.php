@@ -1,6 +1,7 @@
 </section>
-
-
+<script type="text/javascript" src="assets/js/jquery-1.2.6.pack.js"></script>
+<script type="text/javascript" src="assets/js/jquery.maskedinput-1.1.4.pack.js"></script>
+<script src="assets/js/script.jS"></script>
 <script>
 let arrow = document.querySelectorAll(".arrow");
 for (var i = 0; i < arrow.length; i++) {
@@ -20,7 +21,7 @@ sidebarBtn.addEventListener("click", () => {
 let tamanhoTela = window.innerWidth;
 if (tamanhoTela <= 800) {
     var sidebarResponsivo = document.querySelector(".sidebar"); // Procurando o elemento que você quer alterar
-    sidebarResponsivo.classList.add("close"); 
+    sidebarResponsivo.classList.add("close");
 } else {
     sidebarResponsivo.classList.remove("close");
 }
@@ -39,8 +40,8 @@ if (tamanhoTela <= 800) {
 <script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.print.min.js"></script>
 
 <script>
-  $(document).ready(function() {
-    $('#tabela_javascript').DataTable( {
+$(document).ready(function() {
+    $('#tabela_javascript').DataTable({
         responsive: true,
         dom: 'Bfrtip',
         buttons: [
@@ -49,8 +50,8 @@ if (tamanhoTela <= 800) {
         "language": {
             "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Portuguese-Brasil.json"
         },
-    } );
-} );  
+    });
+});
 </script>
 </body>
 

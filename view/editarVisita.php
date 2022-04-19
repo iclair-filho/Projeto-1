@@ -40,6 +40,7 @@ include '../app/controller/connection.php'
                                 </select>
                             </div>
                                     <?php 
+                                    try{
                                     $idVisita = $_GET['idVisita'];
                                     $sqlEditar = $conn->prepare("SELECT * FROM visita WHERE idVisita = $idVisita");
                                     $sqlEditar->execute();
@@ -85,9 +86,6 @@ include '../app/controller/connection.php'
                                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
                                     name="conteudoDia" value="<?php echo $rowEditar['conteudoDia'];?>" placeholder="Conteudo do dia " required></textarea>
                             </div>
-                            <?php 
-                            }
-                            ?>
                             <div class="col-2 align-self-end">
                                 <button type="submit" class="btn btn-primary btn-sm mb-3">Cadastrar</button>
                             </div>
@@ -96,6 +94,12 @@ include '../app/controller/connection.php'
                 </div>
             </div>
         </div>
+        <?php 
+                                    }   
+                }catch(PDOException $e){
+                    echo "error: " . $e->getMessage();
+                }
+                    ?>
         <div class="col-12">
             <div class="card">
                 <div class="card-body">

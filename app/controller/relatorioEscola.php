@@ -3,7 +3,7 @@ include 'connection.php';
 include '../fpdf/fpdf.php';
 
 $idEscola = $_GET['idEscola'];
-$sqlSelect = $conn->prepare("SELECT * FROM escola WHERE idEscola = $idEscola");
+$sqlSelect = $conn->prepare("SELECT * FROM escola e join setor s on e.idSetor=s.idSetor WHERE idEscola = $idEscola");
 $sqlSelect->execute();
 $sqlSelect->setFetchMode(PDO::FETCH_ASSOC);
 
@@ -27,10 +27,10 @@ $pdf->SetFont("Arial", "B", 12);
 $pdf->Cell(190, 10, utf8_decode("DADOS DA ESCOLA"), 1 , 1, "C");
 $pdf->SetFont("Arial", "", 12);
 //$pdf->Cell(63.3, 10, "Setor: "($rowEscola['setor']), 1, 0);
-$pdf->Cell(63.3, 10, "Setor: ", 1, 0);
-$pdf->Cell(63.3, 10, "Localidade: ". $rowEscola['localidade'], 1, 0);
-$pdf->Cell(63.4, 10, "Responsavel: ". $rowEscola['responsavel'], 1, 0);
+$pdf->Cell(95, 10, "Setor: ".$rowEscola['setor']."", 1, 0);
+$pdf->Cell(95, 10, "Responsavel: ". $rowEscola['responsavel'], 1, 0);
 $pdf->Ln();
+$pdf->Cell(190, 10, "Localidade: ". $rowEscola['localidade'], 1, 0);
 $pdf->Ln();
 
 

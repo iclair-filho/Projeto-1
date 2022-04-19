@@ -26,6 +26,8 @@ if (tamanhoTela <= 800) {
     sidebarResponsivo.classList.remove("close");
 }
 </script>
+<<<<<<< HEAD
+=======
 
 
 
@@ -53,6 +55,7 @@ $(document).ready(function() {
     });
 });
 </script>
+>>>>>>> 9437af97138c5ddeffcb82dd335b72cc10a52380
 </body>
 
 </html>

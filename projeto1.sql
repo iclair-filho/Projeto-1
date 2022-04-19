@@ -29,6 +29,16 @@ SET time_zone = "-03:00";
 
 CREATE TABLE `escola` (
   `idEscola` int NOT NULL,
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+  `idEscola` int NOT NULL,
+=======
+  `idEscola` int ,
+>>>>>>> e27c29e186f8047eb9b3a0e0a27b507d1c4d3f44
+>>>>>>> ae8da9ac3aed87444d3ef595bd2f307ed8ea7eac
+=======
+>>>>>>> 9437af97138c5ddeffcb82dd335b72cc10a52380
   `nomeEscola` varchar(255) NOT NULL,
   `responsavel` varchar(255) NOT NULL,
   `localidade` varchar(255) NOT NULL

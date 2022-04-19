@@ -77,6 +77,8 @@ include '../app/controller/connection.php';
                       <td>
                         <a href="editarUsuario.php?idUsuario=<?= $row['idUsuario'];?>"><i class='bx bxs-edit bg-warning'></i></a>
                         <a onclick="return confirm('Deseja excluir?')" href="../app/controller/deleteUsuario.php?idUsuario=<?= $row['idUsuario'] ?>"><i class='bx bxs-trash bg-danger'></i></a>
+                        <a href="../app/controller/relatorioUsuario.php?idUsuario=<?php echo $row['idUsuario']; ?>"
+                                        target=_blank><i class='bx bxs-report bg-info'></i></a>
                       </td>                     
                     </tr>
                   </tbody>

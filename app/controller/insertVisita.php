@@ -1,7 +1,9 @@
 <?php 
+// include 'validalogin.php';
 include 'connection.php';
+session_start();
 
-// $coordenador = $_POST['coordenador'];
+$coordenador = $_SESSION['cpf'];
 $qtAluno = $_POST['qtAluno'];
 $conteudoDia = $_POST['conteudoDia'];
 $nomeProf = $_POST['nomeProf'];

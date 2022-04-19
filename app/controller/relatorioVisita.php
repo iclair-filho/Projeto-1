@@ -11,7 +11,7 @@ function Header(){
 
         $this->SetFont('Arial','B',15);
         $this->Cell(80);
-        $this->Cell(30,10,'Visitas',0,0,'C');
+        $this->Cell(30,10,'ProjUninassau',0,0,'C');
         $this->Ln(20);
     }
 //footer
@@ -33,20 +33,20 @@ $pdf = new PDF();
 $pdf->AddPage();
 
 $pdf->SetFont('Arial', 'B', '16');
-$pdf->Cell(190, 10, "Relatório de Visitas  '", 0, 1, "C");
+$pdf->Cell(190, 10, "RELATORIO DE VISITA", 0, 1, "C");
 $pdf->Ln(15);
 
 $pdf->SetFont("Arial", "B", 12);
-$pdf->Cell(190, 10, "DADOS PESSOAIS", 1 , 1, "C");
+$pdf->Cell(190, 10, utf8_decode("INFORMAÇÕES"), 1 , 1, "C");
 $pdf->SetFont("Arial", "", 12);
-$pdf->Cell(190, 10, "Nome: ".utf8_decode($row['coordenador'])."", 1);
+$pdf->Cell(190, 10, "Coordenador: ".utf8_decode($row['coordenador'])."", 1);
 $pdf->Ln();
 
-$pdf->Cell(95, 10, "CPF: " .$row['qtAluno']. "", 1, 0);
-$pdf->Cell(95, 10, "RG: " .$row['conteudoDia']. "", 1, 0);
+$pdf->Cell(95, 10, "Quantidade de alunos: " .$row['qtAluno']. "", 1, 0);
+$pdf->Cell(95, 10, "Conteudo do dia: " .$row['conteudoDia']. "", 1, 0);
 $pdf->Ln();
-$pdf->Cell(95, 10, "Email: " .$row[' telProf']. "", 1, 0);
-$pdf->Cell(95, 10, "Telefone: " .$row['dataVisita']. "", 1, 0);
+$pdf->Cell(95, 10, "Telefone(Professor): " .$row['telProf']. "", 1, 0);
+$pdf->Cell(95, 10, "Data da visita: " .$row['dataVisita']. "", 1, 0);
 $pdf->Ln();
 $pdf->Ln();
 

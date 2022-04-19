@@ -9,7 +9,7 @@
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
-SET time_zone = "+00:00";
+SET time_zone = "-03:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -81,7 +81,8 @@ CREATE TABLE `visita` (
   `conteudoDia` varchar(255) NOT NULL,
   `nomeProf` varchar(255) NOT NULL,
   `telProf` varchar(15) NOT NULL,
-  `dataVisita` varchar(8) NOT NULL
+  `dataVisita` varchar(8) NOT NULL,
+  `dataCadastro` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --

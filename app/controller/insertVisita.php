@@ -1,7 +1,12 @@
 <?php 
+// include 'validalogin.php';
 include 'connection.php';
+session_start();
 
-// $coordenador = $_POST['coordenador'];
+$coordenador = $_SESSION['cpf'];
+
+$idSetor = $_POST['setor'];
+$idEscola = $_POST['nomeEscola'];
 $qtAluno = $_POST['qtAluno'];
 $conteudoDia = $_POST['conteudoDia'];
 $nomeProf = $_POST['nomeProf'];
@@ -10,7 +15,7 @@ $dataVisita = $_POST['dataVisita'];
 
 try{
     $conn->beginTransaction();
-    $conn->exec("INSERT INTO visita (coordenador, qtAluno, conteudoDia, nomeProf, telProf, dataVisita, dataCadastro) VALUES ('$coordenador', '$qtAluno', '$conteudoDia', '$nomeProf', '$telProf', '$dataVisita', NOW())");
+    $conn->exec("INSERT INTO visita (idSetor, idEscola, coordenador, qtAluno, conteudoDia, nomeProf, telProf, dataVisita, dataCadastro) VALUES ('$idSetor', '$idEscola','$coordenador', '$qtAluno', '$conteudoDia', '$nomeProf', '$telProf', '$dataVisita', NOW())");
     $conn->commit();
     echo "<script>alert('Visita cadastrada com sucesso!');window.location.href='../../view/visita.php';</script>";
 

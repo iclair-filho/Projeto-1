@@ -41,6 +41,7 @@ if (tamanhoTela <= 800) {
 <script>
   $(document).ready(function() {
     $('#tabela_javascript').DataTable( {
+        responsive: true,
         dom: 'Bfrtip',
         buttons: [
             'csv', 'excel', 'pdf', 'print'
